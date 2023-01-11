@@ -1,7 +1,9 @@
 const UserDb = require("../models").User;
 const ActivityDb = require("../models").Activity;
+const FeedbackDb = require("../models").Feedback;
 
 const controller = {
+
     userAuth: async (req, res) => {
       const { email, password } = req.body;
   
@@ -21,7 +23,7 @@ const controller = {
     },
   
     getAllUsers: (req, res) => {
-      UserDb.findAll({ include: [{ model: ActivityDb, as: "Activities" }] })
+      UserDb.findAll({ include: [{ model: ActivityDb, as: "Activities" }, { model : FeedbackDb, as: "Feedbacks"}] })
         .then((users) => {
           res.status(200).send(users);
         })

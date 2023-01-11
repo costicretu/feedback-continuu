@@ -1,16 +1,18 @@
-const ActivityDb = require("../models").Activity;
+const FeedbackDb = require("../models").Feedback;
 const UserDb = require("../models").User;
-
+//reacitomn
+//activity
+//user
 const controller = {
-  addActivity: (req, res) => {
-    const { description, unique_code, deadline, userId } = req.body;
+  addFeedback: (req, res) => {
+    const { reactionId, activityId, userId } = req.body;
     UserDb.findByPk(userId)
       .then((user) => {
         if (user) {
           user
-            .createActivity({ description, unique_code, deadline})
-            .then((activity) => {
-              res.status(201).send(activity);
+            .createFeedback({ reactionId, activityId})
+            .then((feedback) => {
+              res.status(201).send(feedback);
             })
             .catch((err) => {
               console.log(err);
@@ -26,10 +28,10 @@ const controller = {
       });
   },
 
-  getAllActivities: async (req, res) => {
-    ActivityDb.findAll()
-      .then((activities) => {
-        res.status(200).send(activities);
+  getAllFeedbacks: async (req, res) => {
+    FeedbackDb.findAll()
+      .then((feedbacks) => {
+        res.status(200).send(feedbacks);
       })
       .catch((err) => {
         console.log(err);
@@ -37,37 +39,37 @@ const controller = {
       });
   },
 
-  getActivityById: async (req, res) => {
+  getFeedbackById: async (req, res) => {
     const { id } = req.params;
     if (!id) {
       res.status(400).send({ message: "ID not provided!" });
     }
 
-    ActivityDb.findByPk(id)
-      .then((activity) => {
-        res.status(200).send({ activity });
+    FeedbackDb.findByPk(id)
+      .then((feedback) => {
+        res.status(200).send({ feedback });
       })
       .catch((err) => {
         res.status(500).send({ message: "Server error!" });
       });
   },
 
-  deleteOneActivity: async (req, res) => {
+  deleteOneFeedback: async (req, res) => {
     const id = req.params.id;
 
     try {
       if (!id) throw new Error("undefined");
 
-      let activity = await ActivityDb.findByPk(id);
-      if (!activity) throw new Error("nu exista");
+      let feedback = await FeedbackDb.findByPk(id);
+      if (!feedback) throw new Error("nu exista");
 
-      let old_activity = await activity.destroy();
-      res.status(205).send(old_activity);
+      let old_feedback = await feedback.destroy();
+      res.status(205).send(old_feedback);
     } catch (err) {
       if (err.message === "undefined")
         res.status(400).send({ message: "Nu ai specificat id-ul!" });
       else if (err.message === "nu exista") {
-        res.status(404).send({ message: `Activity-ul cu id ${id} nu exista!` });
+        res.status(404).send({ message: `Feedback-ul cu id ${id} nu exista!` });
       } else {
         console.log(err.message);
         res.status(500).send({ message: "Server error!" });

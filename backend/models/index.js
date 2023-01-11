@@ -18,13 +18,6 @@ User.hasMany(Activity, {
   });
   Activity.belongsTo(User);
 
-  User.hasMany(Feedback, {
-    foreignKey: "userId",
-    as: "Feedbacks",
-    onDelete: "CASCADE",
-  });
-  Feedback.belongsTo(User);
-
   Reaction.hasMany(Feedback, {
     foreignKey: "reactionId",
     as: "Feedbacks",
@@ -38,6 +31,13 @@ User.hasMany(Activity, {
     onDelete: "CASCADE",
   });
   Feedback.belongsTo(Activity);
+
+  User.hasMany(Feedback, {
+    foreignKey: "userId",
+    as: "Feedbacks",
+    onDelete: "CASCADE",
+  });
+  Feedback.belongsTo(User);
 
   module.exports = {
     User,
