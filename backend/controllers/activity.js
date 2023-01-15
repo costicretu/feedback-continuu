@@ -3,12 +3,12 @@ const UserDb = require("../models").User;
 
 const controller = {
   addActivity: (req, res) => {
-    const { description, unique_code, deadline, userId } = req.body;
+    const { name,description, unique_code, deadline, userId } = req.body;
     UserDb.findByPk(userId)
       .then((user) => {
         if (user) {
           user
-            .createActivity({ description, unique_code, deadline})
+            .createActivity({name, description, unique_code, deadline})
             .then((activity) => {
               res.status(201).send(activity);
             })

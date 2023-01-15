@@ -1,0 +1,49 @@
+
+.name{
+    display: flex;
+    justify-content: center;
+}
+.description {
+    display: flex;
+}
+.div1 {
+    padding-bottom: 20px;
+    justify-content: center;
+    display: flex;
+}
+#btn1 {
+    padding-bottom: 20px;
+    background: url(./../image/activity/smiley.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100px;
+    height: 100px;
+    border: 0;
+}
+#btn2 {
+    padding-bottom: 20px;
+    background: url(./../image/activity/frowny.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100px;
+    height: 100px;
+    border: 0;
+}
+#btn3 {
+    padding-bottom: 20px;
+    background: url(./../image/activity/surprised.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100px;
+    height: 100px;
+    border: 0;
+}
+#btn4 {
+    padding-bottom: 20px;
+    background: url(./../image/activity/confused.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100px;
+    height: 100px;
+    border: 0;
+}
