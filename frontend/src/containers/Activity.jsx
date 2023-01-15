@@ -18,6 +18,11 @@ function Activity() {
 
     const createActivity = () => {
         navigate("/createActivity");
+
+    } 
+
+    const logout = () => {
+        navigate("/");
     } 
 
     const handleSubmit = async (event) => {
@@ -38,7 +43,12 @@ function Activity() {
 
     return (
         <div className="activity-container">
-            <button onClick={createActivity} id="creeaza" >Creeaza activitate</button>
+            <button onClick={createActivity} id="creeaza" >Creează activitate</button>
+            <div className='aaa'>
+            <button onClick={logout} id="logout" >Deloghează-te</button>
+
+            </div>
+
             {activities.map((activity, index) => (
                 <Card key={index} className="activity-card">
                     <Card.Body>

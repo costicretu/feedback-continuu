@@ -2,9 +2,12 @@
 .name{
     display: flex;
     justify-content: center;
+    background-color: #e1e3eb;
+    border-radius: 30px;
 }
 .description {
     display: flex;
+   
 }
 .div1 {
     padding-bottom: 20px;
@@ -13,12 +16,15 @@
 }
 #btn1 {
     padding-bottom: 20px;
-    background: url(./../image/activity/smiley.jpg);
+    background: url(./../image/activity/smiley.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100px;
     height: 100px;
     border: 0;
+}
+#btn1:active {
+    transform: translateY(4px);
 }
 #btn2 {
     padding-bottom: 20px;
@@ -29,14 +35,20 @@
     height: 100px;
     border: 0;
 }
+#btn2:active {
+    transform: translateY(4px);
+}
 #btn3 {
     padding-bottom: 20px;
-    background: url(./../image/activity/surprised.jpg);
+    background: url(./../image/activity/surprised.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100px;
     height: 100px;
     border: 0;
+}
+#btn3:active {
+    transform: translateY(4px);
 }
 #btn4 {
     padding-bottom: 20px;
@@ -46,4 +58,46 @@
     width: 100px;
     height: 100px;
     border: 0;
+}
+#btn4:active {
+    transform: translateY(4px);
+}
+#creeaza {
+    width: 300px;
+    height: 50px;
+    border-radius: 60px;
+    background-color: rgb(209, 18, 18);
+    color: white;
+    font-size: 25px;
+    border: none;
+}
+.activity-container {
+    padding-top: 10px;
+    background-color: #e1e3eb;
+}
+.activity-card {
+    padding-top: 20px;
+    background-image: url('./../image/login/background.jpg');
+}
+#creeaza:hover {
+    background-color:rgb(44, 26, 19);
+
+}
+#logout {
+    width: 300px;
+    height: 50px;
+    border-radius: 60px;
+    background-color: rgb(209, 18, 18);
+    color: white;
+    font-size: 25px;
+    border: none;
+}
+#logout:hover {
+    background-color:rgb(44, 26, 19);
+
+}
+.aaa {
+    display: flex;
+    justify-content: right;
+    padding-bottom: 20px;
 }

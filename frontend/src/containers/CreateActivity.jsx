@@ -1,5 +1,5 @@
 import './CreateActivity.css';
-import activity from "./../image/activity/ebook.png";
+import name2 from "./../image/activity/ebook.png";
 import Axios from "axios";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -28,24 +28,27 @@ function CreateActivity() {
         setFormData({ ...formData, [name]: value });
     }
 
-    const verify = () => {
-        let x = document.getElementById('a').value;
-        let y = document.getElementById('a2').value;
-        let z = document.getElementById('a3').value;
-        let text;
-        if (x== '' || y == '' || z=='') {
-            text = "Input not valid";
-          } else {
-            text = "Input OK";
-          }
+    const goback = () => {
+        navigate("/activity");
     }
 
     return (
+
         <form onSubmit={handleSubmit}>
-            <input id='a'type="text" name="name" onChange={handleChange} placeholder="Name" />
-            <input id='a2'type="text" name="description" onChange={handleChange} placeholder="Description" />
-            <input id='a3'type="text" name="unique_code" onChange={handleChange} placeholder="Unique Code" />
-            <button type="submit" onClick={verify}>Submit</button>
+            <button id='btn' onClick={goback}>Înapoi</button>
+            <img src={name2} alt="name2" className="name2" />
+            <div className='a'>
+                <input id='a' type="text" name="description" onChange={handleChange} placeholder="Denumire" />
+            </div>
+            <div className='a2'>
+                <input id='a2' type="text" name="description" onChange={handleChange} placeholder="Descriere" />
+            </div>
+            <div className='a3'>
+                <input id='a3' type="text" name="description" onChange={handleChange} placeholder="Cod unic" />
+            </div>
+            <div className='a4'>
+                <button id='btn' type="submit">Creează</button>
+            </div>
         </form>
     );
 }
