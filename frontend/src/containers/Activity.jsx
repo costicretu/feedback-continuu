@@ -31,7 +31,7 @@ function Activity() {
             const response = await Axios.post('http://localhost:8080/api/feedback/', {
                 reactionId: 1,
                 userId: 1,
-                activityId: 1
+                activityId: 1  
             });
             console.log(response);
             navigate("/activity");

@@ -38,13 +38,13 @@ function CreateActivity() {
             <button id='btn' onClick={goback}>Înapoi</button>
             <img src={name2} alt="name2" className="name2" />
             <div className='a'>
-                <input id='a' type="text" name="description" onChange={handleChange} placeholder="Denumire" />
+                <input id='a' type="text" name="name" onChange={handleChange} placeholder="Denumire" />
             </div>
             <div className='a2'>
                 <input id='a2' type="text" name="description" onChange={handleChange} placeholder="Descriere" />
             </div>
             <div className='a3'>
-                <input id='a3' type="text" name="description" onChange={handleChange} placeholder="Cod unic" />
+                <input id='a3' type="text" name="unique_code" onChange={handleChange} placeholder="Cod unic" />
             </div>
             <div className='a4'>
                 <button id='btn' type="submit">Creează</button>
